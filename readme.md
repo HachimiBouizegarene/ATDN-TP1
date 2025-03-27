@@ -60,3 +60,14 @@ z_scores = (data - data.mean()) / data.std()
 print(f"Nombre d'outliers par zScore : \n{(z_scores > z_threshold ).sum() + (z_scores < -z_threshold ).sum()}")
 ```
 On obtient également 0 outliers.
+
+### Exo 3 :
+*test de ShapiroWilk :*
+| **Variable**                          | **p-value**                     |
+|---------------------------------------|---------------------------------|
+| *Poids_poulet_g*                 | 9.10e-06                        |
+| *Nourriture_consommee_g_jour*       | 6.23e-07                        |
+| *Temperature_enclos_C*              | 4.41e-07                        |
+
+Sachant que l'hypothèse nulle est que la population est normalement distribuée,  en choisissant un alpha egale à 0.05, on peut en deduire que l'hypothèse nulle est rejetée pour chaque variable.
+[Source](https://fr.wikipedia.org/wiki/Test_de_Shapiro-Wilk)
