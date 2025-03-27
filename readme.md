@@ -71,3 +71,18 @@ On obtient également 0 outliers.
 
 Sachant que l'hypothèse nulle est que la population est normalement distribuée,  en choisissant un alpha egale à 0.05, on peut en deduire que l'hypothèse nulle est rejetée pour chaque variable.
 [Source](https://fr.wikipedia.org/wiki/Test_de_Shapiro-Wilk)
+
+*T de Student :*
+Je crée deux groupes en les séparant par la médiane de la variable Poids, ensuite j'applique la fonction ttest_ind de scipy.stats pour obtenir les p-values entre les groupes, qui décrivent à quel point les deux groupes sont différents. Plus cette valeur est petite, plus les groupes sont différents sur la variable concernée, vois les résultats :
+| Variable                           | p-value  |
+|-------------------------------------|----------|
+| Poids_poulet_g                      | 0.0000   |
+| Nourriture_consommee_g_jour         | 0.7307   |
+| Temperature_enclos_C                | 0.6041   |
+| Humidite_%                          | 0.4714   |
+| Age_poulet_jours                    | 0.1576   |
+| Gain_poids_jour_g                   | 0.9398   |
+| Taux_survie_%                       | 0.1607   |
+| Cout_elevage_FCFA                   | 0.4053   |
+
+En choisissant un alpha égal à 0.05, on en déduit que les deux groupes sont similaires sur toutes les variables sauf le Poids, et c'est normal car c'est celle que nous avons choisie pour séparer les deux groupes.
