@@ -2,7 +2,6 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.decomposition import KernelPCA
-from sklearn.preprocessing import StandardScaler
 
 data = pd.read_csv("donnees_elevage_poulet.csv")
 data_normalized = (data - data.mean()) / data.std()

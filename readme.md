@@ -86,3 +86,16 @@ Je crée deux groupes en les séparant par la médiane de la variable Poids, ens
 | Cout_elevage_FCFA                   | 0.4053   |
 
 En choisissant un alpha égal à 0.05, on en déduit que les deux groupes sont similaires sur toutes les variables sauf le Poids, et c'est normal car c'est celle que nous avons choisie pour séparer les deux groupes.
+
+### Exo 4 :
+Pour appliquer l'acp avec numpy, j'ai d'abord standardisé les données, j'ai calculer la covariance des variables ensuite j'en ai extrait les vecteurs propres et valeurs propres avec `np.linalg.eig`, ensuite je les ai trié par ordre croissant. Ensuite j'ai projeter les données sur les composantes principales en faisant le produit scalaire des données avec les vecteurs propres.
+Apres application d'ACP avec numpy, j'obtiens cette projections sur les deux premiere composantes : 
+![Acp manual](https://github.com/HachimiBouizegarene/ATDN-TP1/blob/master/assets/acp_manual.png?raw=true)
+
+voici la proportion de variance expliquée par chaque composante principal : ```[15.82633829 14.32670966 13.79586215 13.18341518 12.68416454 11.83528158
+  9.74507921  8.60314938]```. J'aurais suggeré de garder toutes les composantes sauf les deux derniere , qui expliquent environ 80% de la variance, cela va nous permettre de réduire la complexité du modèle tout en conservant la majorité de l'information.
+
+
+Ensuite, avec `KernelPCA` j'ai appliquee des ACP a noyau `(linéaire, RBF, polynomial)` et j'ai obtenu ces résultats : 
+![ACP noyeau](https://github.com/HachimiBouizegarene/ATDN-TP1/blob/master/assets/acp_noyau.png?raw=true)
+Les noyau RBF, polynomial donnent des resultats mediocres par rapport a l'ACP avec noyau lineaire (qui est equivalent à l'ACP classique). KernelPCA n'apporte donc pas de valeur ajoutée et dégrade carrement les résultats. On peut en deduire qu'aucune transformation non linéaire n'est nécessaire.
