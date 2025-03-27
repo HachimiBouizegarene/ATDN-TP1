@@ -51,3 +51,12 @@ lowerThreshold = Q1 - (1.5 * IQR)
 upperThreshold = Q3 + (1.5 * IQR) 
 print(f"Nombre d'outliers : \n{(data < lowerThreshold).sum() + (data > upperThreshold).sum()}")
 ```
+On obtient 0 outliers.
+
+En utilisant le Z-score avec ce code : 
+```python
+z_threshold = 3
+z_scores = (data - data.mean()) / data.std()
+print(f"Nombre d'outliers par zScore : \n{(z_scores > z_threshold ).sum() + (z_scores < -z_threshold ).sum()}")
+```
+On obtient également 0 outliers.
