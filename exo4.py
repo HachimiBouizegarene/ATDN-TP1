@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from sklearn.decomposition import KernelPCA
 
 data = pd.read_csv("donnees_elevage_poulet.csv")
+data = data[['Poids_poulet_g', 'Nourriture_consommee_g_jour', 'Temperature_enclos_C']]
 data_normalized = (data - data.mean()) / data.std()
 covariance = data_normalized.cov()
 

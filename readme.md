@@ -88,6 +88,8 @@ Je crée deux groupes en les séparant par la médiane de la variable Poids, ens
 En choisissant un alpha égal à 0.05, on en déduit que les deux groupes sont similaires sur toutes les variables sauf le Poids, et c'est normal car c'est celle que nous avons choisie pour séparer les deux groupes.
 
 ### Exo 4 :
+####  **> ⚠️ALERTE : J'ai utilisé TOUTES les variables pour cet EXO, pas seulement les 3 premières !**
+---  
 Pour appliquer l'acp avec numpy, j'ai d'abord standardisé les données, j'ai calculer la covariance des variables ensuite j'en ai extrait les vecteurs propres et valeurs propres avec `np.linalg.eig`, ensuite je les ai trié par ordre croissant. Ensuite j'ai projeter les données sur les composantes principales en faisant le produit scalaire des données avec les vecteurs propres.
 Apres application d'ACP avec numpy, j'obtiens cette projections sur les deux premiere composantes : 
 ![Acp manual](https://github.com/HachimiBouizegarene/ATDN-TP1/blob/master/assets/acp_manual.png?raw=true)
